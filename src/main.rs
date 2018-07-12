@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, world!");
+    println!("Usage: cargo run --bin (produce|consume)");
 }

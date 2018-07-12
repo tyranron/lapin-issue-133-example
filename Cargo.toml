@@ -6,9 +6,13 @@ publish = false
 
 [dependencies]
 amq-protocol = "0.21"
+crossbeam-channel = "0.2"
 futures = "0.1"
 lapin-async = "0.13"
 lapin-futures = "0.13"
 log = "0.4"
 stderrlog = "0.4"
 tokio = "0.1"
+
+[features]
+cargo-clippy = []
