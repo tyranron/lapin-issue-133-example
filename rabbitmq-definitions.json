@@ -1,0 +1,53 @@
+{
+  "users": [{
+    "name": "admin",
+    "password": "qweqweqwe",
+    "tags": "administrator"
+  }, {
+    "name": "consumer",
+    "password": "qweqwe",
+    "tags": ""
+  }],
+  "vhosts": [{
+    "name": "/"
+  }],
+  "permissions": [{
+    "user": "admin",
+    "vhost": "/",
+    "configure": ".*",
+    "write": ".*",
+    "read": ".*"
+  }, {
+    "user": "consumer",
+    "vhost": "/",
+    "configure": "",
+    "write": "",
+    "read": ".*"
+  }],
+  "exchanges": [{
+    "name": "example-exchange",
+    "vhost": "/",
+    "type": "direct",
+    "durable": true,
+    "auto_delete": false,
+    "internal": false,
+    "arguments": {}
+  }],
+  "queues": [{
+    "name": "example-queue",
+    "vhost": "/",
+    "durable": true,
+    "auto_delete": false,
+    "arguments": {
+      "x-message-ttl": 3600000
+    }
+  }],
+  "bindings": [{
+    "source": "example-exchange",
+    "vhost": "/",
+    "destination": "example-queue",
+    "destination_type": "queue",
+    "routing_key": "route_to_everybody",
+    "arguments": {}
+  }]
+}

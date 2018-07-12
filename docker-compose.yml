@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  rabbitmq:
+    container_name: lapin133-rabbitmq
+    image: rabbitmq:management-alpine
+    ports:
+      - "5672:5672"    # amqp: rabbitmq
+      - "15672:15672"  # http: rabbitmq management
+    volumes:
+      - ./rabbitmq-definitions.json:/etc/rabbitmq/definitions.json:ro
